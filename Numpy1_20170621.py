@@ -6,7 +6,7 @@ import numpy
 from pylab import *
 # from numpy import array, sin
 # from numpy import *
-a = numpy.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])   # 产生一维数组
+a = numpy.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])   # 产生一维数组   数组的维数还不太理解，以及ndim的用法
 aa = numpy.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])# 产生三维数组  ？？？？？？
 print(aa[2:])                                      # 列出aa的除去前两个元素的其他元素
 print(a)
