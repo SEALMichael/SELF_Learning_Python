@@ -22,10 +22,10 @@ e = rand(2, 4)
 print(e)
 # 求最大最小值
 # e.max()为全局最大，e.max(axis=0)为沿着某个轴最大
-# f_max = e.max(axis=0)
-# f_min = e.min(axis=-1)
-# print(f_max)
-# print(f_min)
+ f_max = e.max(axis=0)
+ f_min = e.min(axis=-1)
+ print(f_max)
+ print(f_min)
 # 找最大最小的位置
 g_max = e.argmax()
 print(g_max)
