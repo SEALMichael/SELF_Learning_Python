@@ -29,3 +29,12 @@ print(e)
 # 找最大最小的位置
 g_max = e.argmax()
 print(g_max)
+# 找最大最小的位置
+g_max = e.argmax()
+print(g_max)
+# 从小到大排列数组中的元素
+h = numpy.sort(e)
+print(h)
+# 返回从小到大的排列在数组中的索引位置
+g = numpy.argsort(e)
+print(g)
