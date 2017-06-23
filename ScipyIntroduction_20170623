@@ -1,0 +1,8 @@
+# Scipy的一些初步用法
+# 2017年6月23日
+# ========================================================
+import numpy as np
+from scipy import optimize
+
+
+np.info(optimize.fmin)
