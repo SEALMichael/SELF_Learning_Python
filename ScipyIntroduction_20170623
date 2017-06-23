@@ -4,5 +4,5 @@
 import numpy as np
 from scipy import optimize
 
-
+# 使用 numpy 中的 info 函数来查看函数的文档
 np.info(optimize.fmin)
