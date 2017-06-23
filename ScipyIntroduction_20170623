@@ -6,3 +6,11 @@ from scipy import optimize
 
 # 使用 numpy 中的 info 函数来查看函数的文档
 np.info(optimize.fmin)
+np.set_printoptions(precision=2, suppress=True)
+data = np.genfromtxt("JANAF_CH4.txt", delimiter="\t")
+# print(data)
+# figure()
+# plot(data)
+# show()
+
+print(data[0, 0])
