@@ -1,0 +1,13 @@
+# Scipy中插值的一些初步用法
+# 2017年6月24日
+# ========================================================
+import numpy as np
+from scipy import optimize
+from pylab import *
+
+np.set_printoptions(precision=2, suppress=True)
+data = np.genfromtxt("JANAF_CH4.txt", delimiter="\t")
+print(data)
+# 选取数据前两列
+Pickdata = data[:, :2]
+print(Pickdata)
