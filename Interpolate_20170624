@@ -9,5 +9,12 @@ np.set_printoptions(precision=2, suppress=True)
 data = np.genfromtxt("JANAF_CH4.txt", delimiter="\t")
 print(data)
 # 选取数据前两列
-Pickdata = data[:, :2]
-print(Pickdata)
+Pick_data = data[:, :2]
+print(Pick_data)
+a = Pick_data[:, 0]
+b = Pick_data[:, 1]
+
+# 画图
+figure()
+plot(a, b, 'ro')
+show()
