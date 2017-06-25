@@ -1,0 +1,32 @@
+import numpy as np
+import matplotlib.pyplot as plt
+# 导入多项式拟合工具
+from numpy import polyfit, poly1d
+
+x = np.linspace(-5, 5, 100)
+y = 4 * x + 1.5
+noise_y = y + np.random.randn(y.shape[-1]) * 2.5
+
+# 画出数据
+
+p1 = plt.plot(x, noise_y, 'rx')
+p1 = plt.plot(x, y, 'b:')
+plt.show()
+
+# 进行线性拟合,一阶多项式 y = a1 * x + a0
+coeff = polyfit(x, noise_y, 1)
+print(coeff)
+
+# 画出拟合曲线
+p2 = plt.plot(x, noise_y, 'rx')
+y = coeff[0] * x + coeff[1]
+p2 = plt.plot(x, y, 'k-')
+p2 = plt.plot(x, y, 'b--')
+plt.show()
+
+# 生成多项式对象
+f = poly1d(coeff)
+p3 = plt.plot(x, noise_y, 'rx')
+p3 = plt.plot(x, f(x))
+plt.show()
+print(f)
