@@ -38,18 +38,44 @@ t = np.arange(-np.pi, np.pi, 0.1)
 y = np.sin(t)
 
 # 不需要使用多个 plot 函数来画多组数组，只需要可以将这些组合放到一个 plot 函数中去即可
-# 生成多个图
-plt.figure(1)
-a1 = plt.plot(t, y, 'mp', t, np.cos(t), 'ro')
 
+plt.figure(1)  # 生成多个图
+a1 = plt.plot(t, y, 'mp', t, np.cos(t), 'ro')
+plt.title('Sin_Cos')
+plt.grid(True)
 # 设置线型和颜色
 plt.figure(2)
-# 某个图下生成子图
-plt.subplot(211)
 a2 = plt.plot(t, y, linewidth=2.0, color='r')
 plt.xlabel('no')
 plt.ylabel('some numbers')
+plt.title('example')
+plt.text(-2, 1, r'$\mu=100,\ \sigma=15$')           # 图形上加文字
 xmin, xmax, ymin, ymax = -np.pi, np.pi, -2, 2
 plt.axis([xmin, xmax, ymin, ymax])
+plt.grid(True)
+
+# 定义一个函数  f(t) = exp(-t) * cos(2 * pi * t)
+
+
+def f(t):
+    return np.exp(-t) * np.cos(2 * np.pi * t)
+
+# 函数的另一种写法
+# def f(t):
+#     f = np.exp(-t) * np.cos(2 * np.pi * t)
+#     return f
+
+t1 = np.arange(0.0, 5.0, 0.1)
+t2 = np.arange(0.0, 5.0, 0.02)
+
+plt.figure(3)
+plt.subplot(211)
+plt.grid(True)
+plt.plot(t1, f(t1), 'bo', t2, f(t2), 'r:')
+
+plt.subplot(212)
+plt.plot(t2, np.cos(2 * np.pi * t2), 'r--')
+plt.grid(True)
 plt.show()
+
 
