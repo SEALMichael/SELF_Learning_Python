@@ -29,3 +29,27 @@
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
+
+# plt.show()函数
+# 默认情况下，matplotlib.pyplot 不会直接显示图像，只有调用 plt.show() 函数时，图像才会显示出来。
+# plt.show() 默认是在新窗口打开一幅图像，并且提供了对图像进行操作的按钮。
+
+t = np.arange(-np.pi, np.pi, 0.1)
+y = np.sin(t)
+
+# 不需要使用多个 plot 函数来画多组数组，只需要可以将这些组合放到一个 plot 函数中去即可
+# 生成多个图
+plt.figure(1)
+a1 = plt.plot(t, y, 'mp', t, np.cos(t), 'ro')
+
+# 设置线型和颜色
+plt.figure(2)
+# 某个图下生成子图
+plt.subplot(211)
+a2 = plt.plot(t, y, linewidth=2.0, color='r')
+plt.xlabel('no')
+plt.ylabel('some numbers')
+xmin, xmax, ymin, ymax = -np.pi, np.pi, -2, 2
+plt.axis([xmin, xmax, ymin, ymax])
+plt.show()
+
