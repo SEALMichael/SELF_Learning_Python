@@ -1,0 +1,21 @@
+# 十分钟上手Pandas
+# 2017年6月27日
+# =============================================================
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Series 为一维数组结构
+s = pd.Series([1, 2, 3, np.nan, 6, 8])
+print(s)
+
+# DataFrame
+# 先产生一维数组作为下标
+dates = pd.date_range('20170101', periods=6)
+print(dates)
+
+# 然后创建一个 DataFrame 结构
+
+df = pd.DataFrame(np.random.randn(6, 4), index=dates, columns=list('ABCD'))
+print(df)
