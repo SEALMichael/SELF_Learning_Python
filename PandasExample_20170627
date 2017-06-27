@@ -19,3 +19,26 @@ print(dates)
 
 df = pd.DataFrame(np.random.randn(6, 4), index=dates, columns=list('ABCD'))
 print(df)
+# print(df.head(1))
+# print(df.index)                      # 查看下标
+# print(df.columns)                    # 查看columns
+# print(df.values)                     # 查看数据
+print(df.describe())        # 查看简单的数据统计
+print(df.T)                 # 转置
+# 若不指定index参数和columns，则从0开始标号
+dff = pd.DataFrame(np.random.randn(3, 2))
+print(dff)
+
+# 读取数据
+print(df.A)
+print(df[0:3])                      # 切片,第一行到第四行
+print(df["20170101":"20170105"])
+print(df.loc[dates[0]])             # 定位到第一个日期所对应的数据
+print(df.loc[:, ['A', 'B']])        # 选择多行多列
+print(df.iloc[3:5, 0:2])            # 连续切片
+print(df[df.A > 0])                 # 所有A列大于零的数
+
+# 计算操作
+# 统计信息，
+df.mean()                   # 统计每一列的均值
+df.mean(1)                  # 统计每一行的均值
